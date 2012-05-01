@@ -1,0 +1,37 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <title>$config.site_name</title>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+        <script src="$config.static/js/jquery.tools.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="$config.static/style/index.css"/>
+    </head>
+    <body>
+        <div class="box">
+            <h1>搜索</h1>
+            <form action="/search" method="POST">
+                关键字：<input name="key" class="textarea" value="{{key}}"></input>
+                <button>搜索</button>
+            </form>
+            <p>{{search_info}}</p>
+            <ul>
+                {% for i in items %}
+                    <li><a href="{{i[1]}}">{{i[0]}}</a></li>
+                {% end %}
+            </ul>
+        </div>
+    </body>
+</html>
+
+<script type="text/javascript">
+    $$(document).ready(jqueryinit);
+
+function jqueryinit() {
+
+}
+
+</script>
+
+
